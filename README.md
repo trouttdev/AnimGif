@@ -1,6 +1,8 @@
+> *NOTE: This is a fork of the fork from [lunakid](https://github.com/lunakid) with some minor improvements.
+
 > *NOTE: This is a fork of [Clément Guillemain](https://github.com/Sybio)'s nice [GifCreator class](https://github.com/Sybio/GifCreator), with some API changes (class rename, new & updated methods, more flexible (and robust) parameter handling etc.), better error handling, several small corrections, code cosmetics & other improvements scattered all across.*
 
-### About 
+### About
 
 AnimGif is a PHP class to create animated GIFs -- just list the source images (in various forms), and that's it!
 
@@ -10,7 +12,7 @@ AnimGif is a PHP class to create animated GIFs -- just list the source images (i
 **1. Inputs:**
 
 ```php
-// Use an array containing file paths, resource vars (initialized with imagecreatefromXXX), 
+// Use an array containing file paths, resource vars (initialized with imagecreatefromXXX),
 // image URLs or binary image data.
 $frames = array(
     imagecreatefrompng("/../images/pic1.png"),      // resource var
