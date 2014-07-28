@@ -127,7 +127,7 @@ class AnimGif
 	{
 		$last_duration = self::DEFAULT_DURATION; // used only if $durations is an array
 		
-		$this->loop = ($loop > -1) ? $loop : 0;
+		$this->loop = $loop === false ? false : (($loop > -1) ? $loop : 0);
 		$this->dis = 2;
 
 		// Check if $frames is a dir; get all files in ascending order if yes (else die):
@@ -300,7 +300,10 @@ class AnimGif
 
 			$this->gif .= substr($this->frameSources[0], 6, 7);
 			$this->gif .= substr($this->frameSources[0], 13, $cmap);
-			$this->gif .= "!\377\13NETSCAPE2.0\3\1".word2bin($this->loop)."\0";
+            if($this->loop !== false)
+            {
+			    $this->gif .= "!\377\13NETSCAPE2.0\3\1".word2bin($this->loop)."\0";
+            }
 		}
 	}
     
